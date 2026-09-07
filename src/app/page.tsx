@@ -1,103 +1,140 @@
 import Image from "next/image";
+import { Mail, MapPin } from "lucide-react";
+import { InstagramIcon } from "@/components/InstagramIcon";
+import { QueryForm } from "@/components/QueryForm";
+import { SITE } from "@/lib/site";
 
-export default function Home() {
+const PILLARS = [
+  {
+    title: "Players",
+    copy: "Find a court near you, compare slots, and book in a few taps. Padel, futsal, cricket, and more.",
+  },
+  {
+    title: "Venue owners",
+    copy: "Run hours, prices, and bookings from one panel. WhatsApp alerts when a court is taken.",
+  },
+  {
+    title: "Pakistan first",
+    copy: "Built in Lahore for local turf culture — rupees, WhatsApp login, and courts that run past midnight.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+    <>
+      <header className="nav">
+        <a className="nav-brand" href="#top">
+          <Image src="/brand/sporttek-mark.png" alt="" width={40} height={40} priority />
+          <span>
+            Sport<span>Tek</span>
+          </span>
+        </a>
+        <div className="nav-actions">
+          <span className="soon-pill">Launching soon</span>
+          <a className="nav-link" href="#query">
+            Send a query
           </a>
         </div>
+      </header>
+
+      <main id="top">
+        <section className="hero">
+          <div className="hero-copy">
+            <p className="eyebrow">Sports venue booking · Pakistan</p>
+            <h1>
+              Courts, slots, and
+              <em> a cleaner way to play.</em>
+            </h1>
+            <p className="lede">
+              {SITE.tagline}. SportTek connects players with turf owners — discover, compare, and
+              book, while venues manage the night from one panel.
+            </p>
+            <div className="hero-cta">
+              <a className="btn-primary" href="#query">
+                Talk to us
+              </a>
+              <a className="btn-ghost" href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer">
+                <InstagramIcon size={18} />
+                @{SITE.instagramHandle}
+              </a>
+            </div>
+          </div>
+          <div className="hero-mark" aria-hidden="true">
+            <div className="hero-orb" />
+            <Image
+              src="/brand/sporttek-mark.png"
+              alt="SportTek"
+              width={420}
+              height={420}
+              priority
+              className="hero-logo"
+            />
+          </div>
+        </section>
+
+        <section className="soon" aria-labelledby="soon-heading">
+          <p className="eyebrow">Coming to your city</p>
+          <h2 id="soon-heading">Launching soon</h2>
+          <p className="lede lede-center">
+            We are finishing the player app and venue panel. Follow along, or send a query if you
+            run a court — or just want first access.
+          </p>
+          <div className="contact-cards">
+            <a className="contact-card" href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer">
+              <InstagramIcon size={22} />
+              <div>
+                <strong>Instagram</strong>
+                <span>@{SITE.instagramHandle}</span>
+              </div>
+            </a>
+            <a className="contact-card" href={`mailto:${SITE.email}`}>
+              <Mail size={22} />
+              <div>
+                <strong>Email</strong>
+                <span>{SITE.email}</span>
+              </div>
+            </a>
+            <div className="contact-card contact-card--static">
+              <MapPin size={22} />
+              <div>
+                <strong>Based in</strong>
+                <span>Lahore, Pakistan</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pillars">
+          {PILLARS.map((item) => (
+            <article key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </section>
+
+        <section className="query" id="query">
+          <div className="query-intro">
+            <p className="eyebrow">Queries</p>
+            <h2>Tell us what you need</h2>
+            <p className="lede">
+              Players, owners, and partners — write to us. Messages go to {SITE.email}.
+            </p>
+          </div>
+          <QueryForm />
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="footer">
+        <div className="footer-brand">
+          <Image src="/brand/sporttek-mark.png" alt="" width={28} height={28} />
+          <span>
+            Sport<span>Tek</span>
+          </span>
+        </div>
+        <p>© {new Date().getFullYear()} SportTek. All rights reserved.</p>
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
       </footer>
-    </div>
+    </>
   );
 }
