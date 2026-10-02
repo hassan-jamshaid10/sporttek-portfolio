@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 import { InstagramIcon } from "@/components/InstagramIcon";
 import { QueryForm } from "@/components/QueryForm";
@@ -133,8 +134,8 @@ export default function HomePage() {
           </span>
         </div>
         <div className="footer-links">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms of Service</a>
+          <Link href="/privacy">Privacy Policy</Link>
+          <Link href="/terms">Terms of Service</Link>
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
         </div>
         <p>© {new Date().getFullYear()} SportTek. All rights reserved.</p>

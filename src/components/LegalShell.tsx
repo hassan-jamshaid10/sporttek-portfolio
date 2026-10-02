@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { SITE } from "@/lib/site";
 
@@ -14,16 +15,16 @@ export function LegalShell({
   return (
     <>
       <header className="nav">
-        <a className="nav-brand" href="/">
+        <Link className="nav-brand" href="/">
           <Image src="/brand/sporttek-mark.png" alt="" width={40} height={40} priority />
           <span>
             Sport<span>Tek</span>
           </span>
-        </a>
+        </Link>
         <div className="nav-actions">
-          <a className="nav-link" href="/">
+          <Link className="nav-link" href="/">
             Home
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -42,8 +43,8 @@ export function LegalShell({
           </span>
         </div>
         <div className="footer-links">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms of Service</a>
+          <Link href="/privacy">Privacy Policy</Link>
+          <Link href="/terms">Terms of Service</Link>
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
         </div>
         <p>© {new Date().getFullYear()} SportTek. All rights reserved.</p>

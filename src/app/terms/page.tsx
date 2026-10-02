@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { LegalShell } from "@/components/LegalShell";
 import { SITE } from "@/lib/site";
 
@@ -118,7 +119,7 @@ export default function TermsPage() {
         <a href={`mailto:${SITE.email}`}>{SITE.email}</a> · {SITE.url}
       </p>
       <p>
-        See also our <a href="/privacy">Privacy Policy</a>.
+        See also our <Link href="/privacy">Privacy Policy</Link>.
       </p>
     </LegalShell>
   );
