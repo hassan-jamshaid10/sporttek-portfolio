@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/brand/sporttek-mark.png",
   },
+  verification: {
+    google: "jOYgsJy_7bEuoWlOrPgUvX_ivDWoqIWwyd4G4UtiisU",
+  },
 };
 
 export default function RootLayout({
