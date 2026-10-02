@@ -132,8 +132,12 @@ export default function HomePage() {
             Sport<span>Tek</span>
           </span>
         </div>
+        <div className="footer-links">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        </div>
         <p>© {new Date().getFullYear()} SportTek. All rights reserved.</p>
-        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
       </footer>
     </>
   );
