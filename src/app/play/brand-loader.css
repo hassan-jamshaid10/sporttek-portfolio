@@ -1,0 +1,186 @@
+/* SportTek play loaders — fullscreen always dark navy (panel-style).
+   Photoroom avatar mark is never theme-filtered or recolored. */
+
+.brand-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background:
+    radial-gradient(720px 380px at 50% 18%, rgb(212 226 42 / 0.18), transparent 52%),
+    radial-gradient(900px 520px at 50% 80%, rgb(101 170 43 / 0.16), transparent 58%),
+    linear-gradient(180deg, #071018 0%, #0f1c28 48%, #17354f 100%);
+  color: #f7f8fa;
+}
+
+.brand-loader--inline {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  min-height: 40dvh;
+  width: 100%;
+  gap: 14px;
+  background: transparent;
+  color: #f7f8fa;
+}
+
+.brand-loader__orbit {
+  position: relative;
+  width: 148px;
+  height: 148px;
+  display: grid;
+  place-items: center;
+}
+
+.brand-loader--inline .brand-loader__orbit {
+  width: 112px;
+  height: 112px;
+}
+
+.brand-loader--sm .brand-loader__orbit {
+  width: 56px;
+  height: 56px;
+}
+
+.brand-loader__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgb(101 170 43 / 0.18);
+  border-top-color: #65aa2b;
+  border-right-color: rgb(212 226 42 / 0.85);
+  animation: brand-spin 1.15s linear infinite;
+}
+
+.brand-loader__ring--inner {
+  inset: 14px;
+  border-width: 2px;
+  border-color: rgb(212 226 42 / 0.12);
+  border-bottom-color: #d4e22a;
+  border-left-color: rgb(101 170 43 / 0.9);
+  animation-duration: 1.7s;
+  animation-direction: reverse;
+}
+
+.brand-loader--inline .brand-loader__ring--inner {
+  inset: 11px;
+}
+
+.brand-loader--sm .brand-loader__ring--inner {
+  inset: 7px;
+}
+
+.brand-loader__glow {
+  position: absolute;
+  inset: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(101 170 43 / 0.35), transparent 68%);
+  animation: brand-pulse 1.6s ease-in-out infinite;
+}
+
+.brand-loader--inline .brand-loader__glow {
+  inset: 22px;
+}
+
+.brand-loader--sm .brand-loader__glow {
+  inset: 12px;
+}
+
+/* Avatar as-shipped — no drop-shadow, invert, or theme recolor. */
+.brand-loader__mark {
+  position: relative;
+  z-index: 1;
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: normal;
+  animation: brand-breathe 1.6s ease-in-out infinite;
+}
+
+.brand-loader--inline .brand-loader__mark {
+  width: 64px;
+  height: 64px;
+}
+
+.brand-loader--sm .brand-loader__mark {
+  width: 32px;
+  height: 32px;
+}
+
+.brand-loader__wordmark {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  font-family: Sora, ui-sans-serif, system-ui, sans-serif;
+  color: #f7f8fa;
+}
+
+.brand-loader--inline .brand-loader__wordmark {
+  font-size: 1.25rem;
+  color: #f7f8fa;
+}
+
+.brand-loader__wordmark span {
+  color: #65aa2b;
+}
+
+.brand-loader__label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgb(247 248 250 / 0.78);
+  font-family: Sora, ui-sans-serif, system-ui, sans-serif;
+}
+
+.brand-loader--inline .brand-loader__label {
+  color: rgb(247 248 250 / 0.78);
+}
+
+.brand-loader--sm .brand-loader__wordmark,
+.brand-loader--sm .brand-loader__label {
+  display: none;
+}
+
+@keyframes brand-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes brand-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes brand-breathe {
+  0%,
+  100% {
+    transform: scale(0.96);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-loader__ring,
+  .brand-loader__ring--inner,
+  .brand-loader__glow,
+  .brand-loader__mark {
+    animation: none;
+  }
+}

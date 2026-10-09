@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Class-based dark: — toggle `.dark` on html or .play-root (Tailwind v4 default is prefers-color-scheme) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --navy: #17354f;
   --navy-ink: #0f1c28;

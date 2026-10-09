@@ -1,0 +1,14 @@
+# SportTek
+
+> Pakistan’s sports booking platform for padel, cricket, futsal and more.
+
+- Site: https://sporttek.pk
+- Book courts: https://sporttek.pk/play
+- Padel: https://sporttek.pk/padel
+- Cricket: https://sporttek.pk/cricket
+- Futsal: https://sporttek.pk/futsal
+- Sports booking: https://sporttek.pk/sports-booking
+- Contact: info@sporttek.pk
+- Instagram: https://www.instagram.com/sporttek.pk
+
+SportTek helps players find venues, compare slots and prices in PKR, and book online.
