@@ -64,7 +64,7 @@ export function QueryForm() {
       </div>
       <label className="query-message">
         <span>Message</span>
-        <textarea name="message" required rows={5} placeholder="Tell us what you need — a court, a partnership, or a question." />
+        <textarea name="message" required rows={5} placeholder="Tell us what you need: a court, a partnership, or a question." />
       </label>
       <button type="submit" className="query-submit" disabled={busy}>
         {busy ? <Loader2 className="spin" size={18} /> : <Send size={18} />}

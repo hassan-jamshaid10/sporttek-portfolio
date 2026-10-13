@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: ["/", "/play", "/padel", "/cricket", "/futsal", "/sports-booking", "/privacy", "/terms"],
+        allow: "/",
         disallow: [
           "/play/login",
           "/play/otp",
@@ -22,6 +22,6 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${SITE.url}/sitemap.xml`,
-    host: SITE.url,
+    host: SITE.url.replace(/^https?:\/\//, ""),
   };
 }

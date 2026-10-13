@@ -21,11 +21,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "SportTek | Sports booking platform Pakistan – padel, cricket, futsal",
+    default: "SportTek | Sports booking platform Pakistan, padel, cricket, futsal",
     template: "%s | SportTek",
   },
   description:
-    "SportTek is Pakistan’s sports booking platform. Book padel courts, cricket grounds, futsal turf and more. Find live slots, compare prices, and play.",
+    "SportTek is Pakistan's sports booking platform. Book padel courts, cricket grounds, futsal turf and more. Find live slots, compare prices, and play.",
   keywords: [...SEO_KEYWORDS],
   applicationName: SITE.name,
   authors: [{ name: SITE.name, url: SITE.url }],
@@ -33,12 +33,12 @@ export const metadata: Metadata = {
   publisher: SITE.name,
   category: "sports",
   alternates: {
-    canonical: SITE.url,
+    canonical: "/",
   },
   openGraph: {
     title: "SportTek | Book sports courts in Pakistan",
     description:
-      "Find, book and play. Padel, cricket, futsal and more on Pakistan’s sports booking platform.",
+      "Find, book and play. Padel, cricket, futsal and more on Pakistan's sports booking platform.",
     url: SITE.url,
     siteName: SITE.name,
     locale: "en_PK",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         url: "/brand/sporttek-mark.png",
         width: 512,
         height: 512,
-        alt: "SportTek – Find, book and play",
+        alt: "SportTek Find, book and play",
       },
     ],
   },

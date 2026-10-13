@@ -8,8 +8,8 @@ const ROWS = [
   {
     icon: Globe,
     label: "Website",
-    value: "sporttek.pk",
-    href: "https://sporttek.pk",
+    value: "www.sporttek.pk",
+    href: "https://www.sporttek.pk",
   },
   {
     icon: Phone,

@@ -43,7 +43,7 @@ export const SPORT_LANDINGS: SportLanding[] = [
       "Find and book padel courts across Pakistan on SportTek. Compare slots, prices, and venues in Lahore, Karachi, Islamabad and more.",
     h1: "Book padel courts in Pakistan",
     intro:
-      "SportTek is Pakistan’s padel booking platform. Browse live availability, lock a court in a few taps, and play the same day.",
+      "SportTek is Pakistan's padel booking platform. Browse live availability, lock a court in a few taps, and play the same day.",
     bullets: [
       "Live padel slots near you",
       "Transparent prices in PKR",
@@ -111,7 +111,7 @@ export const SPORT_LANDINGS: SportLanding[] = [
     title: "Sports booking platform Pakistan | SportTek",
     description:
       "SportTek is the sports booking platform for Pakistan. Book padel, cricket, futsal and more. Find courts, compare prices, play.",
-    h1: "Pakistan’s sports booking platform",
+    h1: "Pakistan's sports booking platform",
     intro:
       "SportTek connects players with turf owners. One place to discover venues, book courts, and manage your games.",
     bullets: [

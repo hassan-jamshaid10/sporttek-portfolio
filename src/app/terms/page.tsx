@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms governing use of SportTek apps, panel, and website.",
   alternates: { canonical: "/terms" },
+  robots: { index: true, follow: true },
 };
 
 export default function TermsPage() {

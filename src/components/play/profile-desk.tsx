@@ -145,11 +145,11 @@ export function ProfileDesk() {
 
   async function shareProfile() {
     const text = profile.fullName?.trim()
-      ? `${profile.fullName.trim()} is on SportTek. Find, book and play. https://sporttek.pk`
-      : "I'm on SportTek. Find, book and play. https://sporttek.pk";
+      ? `${profile.fullName.trim()} is on SportTek. Find, book and play. https://www.sporttek.pk`
+      : "I'm on SportTek. Find, book and play. https://www.sporttek.pk";
     try {
       if (navigator.share) {
-        await navigator.share({ title: "SportTek", text, url: "https://sporttek.pk" });
+        await navigator.share({ title: "SportTek", text, url: "https://www.sporttek.pk" });
         setShareNote("Shared");
         window.setTimeout(() => setShareNote(null), 1600);
         return;

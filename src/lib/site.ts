@@ -1,6 +1,7 @@
 export const SITE = {
   name: "SportTek",
-  url: "https://sporttek.pk",
+  /** Must match the live host. Vercel redirects apex → www. */
+  url: "https://www.sporttek.pk",
   email: "info@sporttek.pk",
   instagramHandle: "sporttek.pk",
   instagramUrl: "https://www.instagram.com/sporttek.pk",

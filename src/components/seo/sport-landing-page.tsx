@@ -94,7 +94,7 @@ export function SportLandingPage({ landing }: { landing: SportLanding }) {
         </h2>
         <p className="mt-3">
           SportTek is built in Pakistan for local venues and players. Search courts, compare
-          prices in rupees, and confirm bookings online — without calling every turf.
+          prices in rupees, and confirm bookings online without calling every turf.
         </p>
         <p className="mt-3">
           Looking for{" "}

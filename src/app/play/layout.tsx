@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import { PlayFrame } from "@/components/play/play-frame";
+import { absoluteUrl, SEO_KEYWORDS } from "@/lib/seo";
+import { SITE } from "@/lib/site";
 import "./play.css";
 import "./brand-loader.css";
 
@@ -15,19 +17,22 @@ export const metadata: Metadata = {
   title: "Book sports courts in Pakistan",
   description:
     "Book padel, cricket, futsal and more on SportTek. Live slots, transparent PKR prices, instant confirmation across Pakistan.",
-  keywords: [
-    "SportTek",
-    "book sports courts Pakistan",
-    "padel booking",
-    "cricket booking",
-    "futsal booking",
-    "sports booking platform",
-  ],
-  alternates: { canonical: "https://sporttek.pk/play" },
+  keywords: [...SEO_KEYWORDS],
+  alternates: { canonical: "/play" },
   openGraph: {
     title: "Book courts on SportTek",
     description: "Find a court near you and book in minutes.",
-    url: "https://sporttek.pk/play",
+    url: absoluteUrl("/play"),
+    siteName: SITE.name,
+    locale: "en_PK",
+    type: "website",
+    images: [{ url: "/brand/sporttek-mark.png", width: 512, height: 512, alt: "SportTek" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book courts on SportTek",
+    description: "Find a court near you and book in minutes.",
+    images: ["/brand/sporttek-mark.png"],
   },
   robots: { index: true, follow: true },
 };

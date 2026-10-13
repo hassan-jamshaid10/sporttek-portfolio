@@ -4,13 +4,8 @@ import { absoluteUrl, SPORT_LANDINGS } from "@/lib/seo";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
+  /** Indexable public pages only. `/` redirects to `/play`, so list `/play` as the home entry. */
   const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: absoluteUrl("/"),
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 1,
-    },
     {
       url: absoluteUrl("/play"),
       lastModified: now,
